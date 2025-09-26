@@ -1,0 +1,21 @@
+let
+    Source = Csv.Document(File.Contents("C:\Users\maria\OneDrive\Desktop\Twitter-Performance-Risk-Analysis\chatgpt_daily_tweets.csv"),[Delimiter=",", Columns=20, Encoding=65001, QuoteStyle=QuoteStyle.Csv]),
+    #"Promoted Headers" = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
+    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers",{{"tweet_id", Int64.Type}, {"tweet_created", type datetime}, {"tweet_extracted", type datetime}, {"text", type text}, {"lang", type text}, {"user_id", Int64.Type}, {"user_name", type text}, {"user_username", type text}, {"user_location", type text}, {"user_description", type text}, {"user_created", type datetime}, {"user_followers_count", Int64.Type}, {"user_following_count", Int64.Type}, {"user_tweet_count", Int64.Type}, {"user_verified", type logical}, {"source", type text}, {"retweet_count", Int64.Type}, {"like_count", Int64.Type}, {"reply_count", Int64.Type}, {"impression_count", Int64.Type}}),
+    #"Replaced Value" = Table.ReplaceValue(#"Changed Type","","Unknown",Replacer.ReplaceValue,{"user_location"}),
+    #"Replaced Value1" = Table.ReplaceValue(#"Replaced Value","","Unknown",Replacer.ReplaceValue,{"user_description"}),
+    #"Removed Columns" = Table.RemoveColumns(#"Replaced Value1",{"source"}),
+    #"Removed Errors" = Table.RemoveRowsWithErrors(#"Removed Columns", {"tweet_id"}),
+    #"Filtered Rows" = Table.SelectRows(#"Removed Errors", each [user_name] <> null and [user_name] <> ""),
+    #"Filtered Rows1" = Table.SelectRows(#"Filtered Rows", each [user_created] <> null and [user_created] <> ""),
+    #"Changed Type1" = Table.TransformColumnTypes(#"Filtered Rows1",{{"tweet_created", type datetime}}),
+    #"Inserted Date" = Table.AddColumn(#"Changed Type1", "Date", each DateTime.Date([tweet_created]), type date),
+    #"Renamed Columns" = Table.RenameColumns(#"Inserted Date",{{"Date", "Tweet_date"}}),
+    #"Sorted Rows" = Table.Sort(#"Renamed Columns",{{"Tweet_date", Order.Descending}}),
+    #"Inserted Time" = Table.AddColumn(#"Sorted Rows", "Time", each DateTime.Time([tweet_created]), type time),
+    #"Renamed Columns1" = Table.RenameColumns(#"Inserted Time",{{"Time", "Tweet_time"}, {"lang", "language"}}),
+    #"Removed Columns1" = Table.RemoveColumns(#"Renamed Columns1",{"Tweet_time"}),
+    #"Inserted Hour" = Table.AddColumn(#"Removed Columns1", "Hour", each Time.Hour([tweet_created]), Int64.Type),
+    #"Renamed Columns2" = Table.RenameColumns(#"Inserted Hour",{{"Hour", "Tweet_hour"}})
+in
+    #"Renamed Columns2"
