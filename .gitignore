@@ -1,0 +1,18 @@
+# --- Power BI Files ---
+# Ignore the compiled report file (it contains the data and is too large for Git)
+*.pbix
+# Ignore temporary files created by Power BI Desktop
+.pbixDataCache
+.pbit
+
+# --- Data Files (Too large or sensitive for Git) ---
+# Ignore the raw CSV dataset
+*.csv
+# Ignore other common data formats
+*.xlsx
+*.parquet
+
+# --- Power Query / Local Settings ---
+# Ignore temporary user settings folders
+.vs/
+.local/
