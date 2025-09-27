@@ -39,8 +39,6 @@ This project is structured to directly validate the five key, high-value skills 
 
 ### 2. Analysis & Risk Identification
 
-*(Leave this blank for now – you will fill this in after your Power Query ETL is complete and you've created your DAX metrics.)*
 
 ### 3. Final Recommendation
 
-*(Leave this blank for now – this is the final, one-sentence answer to the Business Objective.)*
