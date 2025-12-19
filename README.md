@@ -31,10 +31,10 @@ The core business question driving this analysis is:
 ### 1. Data Sourcing & Cleaning (In Progress)
 
 * **Source:** Daily ChatGPT Twitter data (Kaggle).
-* **Initial Integrity & Cleanup:** To ensure reliable analysis, negligible data errors were removed, and high-volume missing categorical values were replaced with **"Unknown."** This prevents data loss while allowing users to analyze the impact of incomplete source data.
-* **Noise Reduction & Focus:** Irrelevant columns were removed (early filtering) to **optimize Power Query performance** and focus the model solely on risk-analysis fields.
-* **Date/Time Integrity & Optimization:** The primary timestamp (`tweet_created`) was used to derive two key dimensions: `Tweet_Date` (for daily trends) and a dedicated **`Tweet_Hour`** (for real-time anomaly detection). This optimization ensures the data is correctly structured for the core business objective of spotting hourly risk spikes.
-
+* **Initial Integrity & Cleanup:** To ensure reliable analysis, negligible data errors were removed, and high-volume missing categorical values were replaced with "Unknown." This prevents data loss while allowing users to analyze the impact of incomplete source data.
+* **Noise Reduction & Focus:** Irrelevant columns were removed (early filtering) to optimize Power Query performance and focus the model solely on risk-analysis fields.
+* **Date/Time Integrity & Optimization:** The primary timestamp (tweet_created) was used to derive two key dimensions: Tweet_Date (for daily trends) and a dedicated Tweet_Hour (for real-time anomaly detection).
+* 
 ### 2. Analysis & Risk Identification
 
 
