@@ -28,6 +28,24 @@ The core business question driving this analysis is:
 
 ## Methodology & ETL Pipeline
 
+graph TD
+    subgraph Sourcing
+    A[(Kaggle: ChatGPT Twitter Data)] --> B[Data Cleaning]
+    end
+
+    subgraph ETL_Process
+    B --> C[Handle Missing Values: 'Unknown']
+    C --> D[Column Filtering & Optimization]
+    D --> E{Feature Engineering}
+    E --> F[Tweet_Date: Daily Trends]
+    E --> G[Tweet_Hour: Anomaly Detection]
+    end
+
+    subgraph Analysis
+    F --> H[Risk Analysis Model]
+    G --> H
+    end
+
 ### 1. Data Sourcing & Cleaning (In Progress)
 
 * **Source:** Daily ChatGPT Twitter data (Kaggle).
