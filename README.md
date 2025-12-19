@@ -16,8 +16,6 @@ The core business question driving this analysis is:
 
 ## 🛠️ Key Skills Demonstrated
 
-This project is structured to directly validate the five key, high-value skills targeted for a Performance Analytics Consultant role:
-
 | Skill | Evidence in this Project |
 | :--- | :--- |
 | **Advanced DAX & Business Logic** | Creation of verifiable metrics (KPIs) and risk scores to track sentiment, engagement trends, and anomaly detection. |
