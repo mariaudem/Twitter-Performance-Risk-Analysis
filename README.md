@@ -18,8 +18,8 @@ The core of this project is a self-reflecting multi-agent system designed to rep
 - **Optimization:** Focused on **Precision** to ensure results are actionable for decision-makers.
 ---
 ## 🛠️ The Agentic Stack
-- **Orchestration:** LangChain (agentic chains) → migrating to CrewAI multi-agent framework
-- **Intelligence:** Llama-3.3-70B (via Groq)
+- **Orchestration:** CrewAI multi-agent framework
+- **Intelligence:** Llama-3.3-70B (via Groq free tier)
 - **Language:** Python 3.12
 - **Data Handling:** Pandas
 ---
