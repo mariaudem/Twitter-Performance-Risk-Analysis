@@ -1,46 +1,52 @@
-# 📊 Twitter-Performance-Risk-Analysis
+# 🤖 Autonomous Agentic Risk Intelligence: Twitter Analysis
 
-## Project Overview
-
-This project is a performance analytics case study focused on using unstructured social media data to inform **competitive strategy** and proactively identify **market risks**. The primary objective is to demonstrate robust ETL procedures necessary for deriving reliable, high-value business insights from messy, real-time data sources.
-
----
-
-## 🎯 Business Objective (High-Value Focus)
-
-The core business question driving this analysis is:
-
-> **"How can Twitter data analytics be used to measure competitors' brand communication effectiveness and identify real-time market risk anomalies?"**
+## 🚀 The Agentic Evolution
+This project demonstrates the transition from manual data monitoring to **Autonomous Risk Discovery**. By leveraging a multi-agent AI architecture, the system automates the identification and prioritization of market threats within complex social media datasets.
 
 ---
 
-## 🛠️ Key Skills Demonstrated
+## 🎯 Strategic Mission
+The system focuses on scaling intelligence:
+> **"How can autonomous agents reduce the manual overhead of social media monitoring while maintaining high precision in risk detection?"**
 
-This project is structured to directly validate the five key, high-value skills targeted for a Performance Analytics Consultant role:
+---
 
-| Skill | Evidence in this Project |
+## 🧠 Agent Architecture: The "Hunter-Critic" Governance
+The core of this project is a self-reflecting multi-agent system designed to replace static filtering with dynamic reasoning.
+
+### 1. The Risk Intelligence Agent (The "Hunter")
+- **Autonomous Role:** Analyzes unstructured tweet datasets for emerging anomalies.
+- **Cognitive Task:** Identifies sentiment shifts, geopolitical triggers, and brand risks.
+- **Optimization:** Focused on **Recall** to capture all potential high-impact signals.
+
+### 2. The QA & Reflection Agent (The "Critic")
+- **Autonomous Role:** Audits findings through Agentic Reflection.
+- **Cognitive Task:** Cross-validates findings, reduces potential hallucinations, and assigns a **Severity Score (1-10)**.
+- **Optimization:** Focused on **Precision** to ensure results are actionable for decision-makers.
+
+---
+
+## 🛠️ The Agentic Stack
+- **Orchestration:** LangChain (agentic chains) → migrating to CrewAI multi-agent framework
+- **Intelligence:** Llama-3.3-70B (via Groq)
+- **Language:** Python 3.12
+- **Data Handling:** Pandas
+
+---
+
+## ⚙️ Intelligent Data Engineering
+Data is pre-processed to maximize the "Signal-to-Noise" ratio for LLM-based analysis.
+
+- **Feature Engineering:** Systematic cleaning of URLs and metadata to isolate raw human intent.
+- **Temporal Consistency:** UTC normalization for accurate event correlation across global time zones.
+- **Resilient Execution:** Robust error handling to maintain continuity during batch processing.
+
+---
+
+## 🛠️ Skills Demonstrated
+| Skill | Impact |
 | :--- | :--- |
-| **Advanced DAX & Business Logic** | Creation of verifiable metrics (KPIs) and risk scores to track sentiment, engagement trends, and anomaly detection. |
-| **Stakeholder Communication & Consulting** | Documentation that translates technical ETL decisions into business rationale and final strategic recommendations (this README). |
-| **Robust ETL Data Modeling (Power Query)** | Extensive use of Power Query M-code for text cleaning, feature engineering, and data validation necessary for reliable sentiment and trend analysis. |
-| **SQL Querying & Data Validation** | *(To be added: Outline of SQL principles used for data integrity checks.)* |
-| **Version Control (Git)** | Maintenance of a reliable audit trail for all code changes and documentation using GitHub. |
-
----
-
-## Methodology & ETL Pipeline
-
-### 1. Data Sourcing & Cleaning (In Progress)
-
-* **Source:** Daily ChatGPT Twitter data (Kaggle).
-* **Initial Integrity & Cleanup:** To ensure reliable analysis, negligible data errors were removed, and high-volume missing categorical values were replaced with **"Unknown."** This prevents data loss while allowing users to analyze the impact of incomplete source data.
-* **Noise Reduction & Focus:** Irrelevant columns were removed (early filtering) to **optimize Power Query performance** and focus the model solely on risk-analysis fields.
-* **Date/Time Integrity & Optimization:** The primary timestamp (`tweet_created`) was used to derive two key dimensions: `Tweet_Date` (for daily trends) and a dedicated **`Tweet_Hour`** (for real-time anomaly detection). This optimization ensures the data is correctly structured for the core business objective of spotting hourly risk spikes.
-
-### 2. Analysis & Risk Identification
-
-*(Leave this blank for now – you will fill this in after your Power Query ETL is complete and you've created your DAX metrics.)*
-
-### 3. Final Recommendation
-
-*(Leave this blank for now – this is the final, one-sentence answer to the Business Objective.)*
+| **Agentic AI Orchestration** | Designing multi-agent workflows for complex analytical tasks. |
+| **AI Governance** | Implementing self-correction loops to ensure data integrity. |
+| **Cognitive Data Processing** | Transforming unstructured noise into structured, prioritized metrics. |
+| **Scalable Risk Modeling** | Developing AI-driven frameworks for business-critical oversight. |
