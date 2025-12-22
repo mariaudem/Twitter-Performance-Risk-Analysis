@@ -1,7 +1,7 @@
 # 🤖 Autonomous Agentic Risk Intelligence: Twitter Analysis
 
 ## 🚀 The Agentic Evolution
-This project demonstrates the transition from manual data monitoring to **Autonomous Risk Discovery**. By leveraging a multi-agent AI architecture, the system automates the identification and prioriti[...]
+This project demonstrates the transition from manual data monitoring to **Autonomous Risk Discovery**. By leveraging a multi-agent AI architecture, the system automates the identification and prioritization of market threats within complex social media datasets.
 
 ---
 ## 🎯 Strategic Mission
@@ -38,6 +38,15 @@ The core of this project is a self-reflecting multi-agent system designed to rep
 - **Resilient Execution:** Checkpointing after every batch, automatic pauses for rate limits and daily token caps, safe resume capability.
 
 🔸 Note: Entire 5000-tweet analysis completed on Groq free tier (no cost incurred). Final report saved as `outputs/risk_report_5000sample_final.csv`.
+
+---
+## 🛠️ Skills Demonstrated
+| Skill | Impact |
+| :--- | :--- |
+| **Agentic AI Orchestration** | Designing multi-agent workflows for complex analytical tasks. |
+| **AI Governance** | Implementing self-correction loops to ensure data integrity. |
+| **Cognitive Data Processing** | Transforming unstructured noise into structured, prioritized metrics. |
+| **Scalable Risk Modeling** | Developing AI-driven frameworks for business-critical oversight. |
 
 ---
 ## 📊 Process Flow
