@@ -37,7 +37,7 @@ The core of this project is a self-reflecting multi-agent system designed to rep
 - **Temporal Consistency:** Leverages pre-normalized UTC timestamps from raw data.
 - **Resilient Execution:** Checkpointing after every batch, automatic pauses for rate limits and daily token caps, safe resume capability.
 
-🔸 Note: Entire 5000-tweet analysis completed on Groq free tier (no cost incurred). Final report saved as `outputs/risk_report_5000sample_final.csv`.
+🔸 Note: Entire 5000-tweet analysis completed on Groq (minimal paid usage: <2 euros to bypass free-tier rate limits). Final report saved as `outputs/risk_report_5000sample_final.csv`.
 
 ---
 ## 🛠️ Skills Demonstrated
