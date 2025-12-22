@@ -42,18 +42,17 @@ The core of this project is a self-reflecting multi-agent system designed to rep
 ---
 ## 📊 Process Flow
 
-```mermaid
 flowchart TD
-    A[Raw CSV data<br/>data/raw/chatgpt_daily_tweets.csv] --> B[Load with Pandas]
-    B --> C[Batching Loop<br/>50 tweets per batch]
+    A[Raw CSV data<br />data/raw/chatgpt_daily_tweets.csv] --> B[Load with Pandas]
+    B --> C[Batching Loop<br />50 tweets per batch]
     C --> D[CrewAI Sequential Crew]
-    D --> E[Agent 1: Risk Intelligence<br/>(Hunter - Recall focus)]
-    E --> F[Agent 2: QA & Reflection<br/>(Critic - Precision focus)]
+    D --> E[Agent 1: Risk Intelligence<br />(Hunter - Recall focus)]
+    E --> F[Agent 2: QA & Reflection<br />(Critic - Precision focus)]
     F --> G[Audited Result per Batch]
-    G --> H{Checkpoint Saved?<br/>Rate limit handling}
+    G --> H{Checkpoint Saved?<br />Rate limit handling}
     H -->|Yes| I[Append to results]
     H -->|Rate limit| J[Automatic pause/resume]
     J --> C
     I --> K[All batches complete?]
     K -->|No| C
-    K -->|Yes| L[Save final CSV<br/>outputs/risk_report_5000sample_final.csv]
+    K -->|Yes| L[Save final CSV<br />outputs/risk_report_5000sample_final.csv]
