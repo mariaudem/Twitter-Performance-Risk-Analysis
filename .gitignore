@@ -13,34 +13,31 @@
 # ----------------------------------------------------------------------
 # --- Data Files (Too large or sensitive for Git) ---
 # ----------------------------------------------------------------------
-# Ignore the raw CSV dataset
+# Ignore common large/sensitive data formats
 *.csv
-# Ignore other common data formats
 *.xlsx
 *.parquet
-# Ignore common database dump files
 *.sql
 
-# ----------------------------------------------------------------------
-# --- Local Settings & IDE Files (Exclude from the public repo) ---
-# ----------------------------------------------------------------------
-# Ignore temporary user settings folders used by VS Code, etc.
-.vs/
-.local/
-# Ignore macOS-specific system files
-.DS_Store
-# Ignore Windows-specific thumbnail caches
-Thumbs.db
-# Ignore the 'bin' and 'obj' directories commonly used in programming projects
-bin/
-obj/
-# Environment variables
-.env
-
-# Jupyter notebooks checkpoints
-.ipynb_checkpoints/
-
-# Large data
+# Project-specific data folders
 data/raw/*.csv
 data/processed/*
 outputs/*
+
+# ----------------------------------------------------------------------
+# --- Local Settings & Secrets ---
+# ----------------------------------------------------------------------
+# Environment variables - NEVER commit API keys
+.env
+.env.local
+
+# IDE and OS temporary files
+.vs/
+.local/
+.DS_Store
+Thumbs.db
+bin/
+obj/
+
+# Jupyter checkpoints
+.ipynb_checkpoints/
