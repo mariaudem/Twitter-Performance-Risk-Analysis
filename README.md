@@ -67,3 +67,21 @@ flowchart TD
     K -->|No| C
     K -->|Yes| L["Save final CSV\noutputs/risk_report_5000sample_final.csv"]
 ```
+---
+## 🎉 Project Status (December 2025)
+- **Status:** Complete & Functional  
+- **Dataset Processed:** 5,000 ChatGPT-related tweets (random sample)  
+- **Batches Analyzed:** 250 (20 tweets each)  
+- **Output:** Full audited risk report with Hunter-Critic governance  
+- **Cost:** Minimal (<€2 via Groq paid tier to bypass free-tier daily limits)  
+- **Key Features Proven:** Checkpointing, rate-limit resilience, sequential CrewAI orchestration  
+
+Final report: `outputs/risk_report_5000sample_final.csv`
+
+---
+## 🔍 Insights & Methodology
+**How do autonomous agents reduce manual overhead while maintaining precision?**
+
+- **Massive Noise Filtering:** The system autonomously filtered 5,000 raw tweets into 250 high-priority risk insights, reducing human review volume by ~95%.
+- **Dual-Agent Governance:** Precision is ensured by the Hunter-Critic loop — every risk identified by the analyst must pass a compliance audit before finalization.
+- **Operational Resilience:** The architecture handles API rate limits and long-running processes through systematic checkpointing, ensuring no data loss or redundant computation.
