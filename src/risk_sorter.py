@@ -25,7 +25,7 @@ task_sort = Task(
     Input data (CSV content):
     {report_content}
 
-    Output exactly this format and nothing else:
+    Output EXACTLY this format and NOTHING else — no thoughts, no reasoning, no extra lines:
 
     The top 10 technical risks associated with ChatGPT are:
 
@@ -42,9 +42,9 @@ task_sort = Task(
 
     These risks have significant strategic implications for individuals, organizations, and society as a whole, and it is essential to develop strategies to mitigate them and ensure the safe and responsible use of ChatGPT.
 
-    No extra text, thoughts, headings, or repetition.
+    Start directly with "The top 10..." — no other text before or between.
     """,
-    expected_output="Intro sentence + single numbered list + closing sentence",
+    expected_output="Exactly intro + clean numbered list + closing sentence, no Thought lines",
     agent=sorter
 )
 
