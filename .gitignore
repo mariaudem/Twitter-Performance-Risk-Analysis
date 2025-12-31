@@ -1,0 +1,52 @@
+# ----------------------------------------------------------------------
+# --- Power BI Files (Ignore compiled report and cache) ---
+# ----------------------------------------------------------------------
+# Ignore the compiled report file (it contains the data and is too large for Git)
+*.pbix
+# Ignore temporary files created by Power BI Desktop
+.pbixDataCache
+.pbit
+# Ignore the hidden folder containing local Power BI settings/temp files
+.pbi/
+.pbiTemp/
+
+# ----------------------------------------------------------------------
+# --- Data Files (Too large or sensitive for Git) ---
+# ----------------------------------------------------------------------
+# Ignore common large/sensitive data formats
+*.csv
+*.xlsx
+*.parquet
+*.sql
+
+# Project-specific data folders
+data/raw/*.csv
+data/processed/*
+outputs/*
+
+# ----------------------------------------------------------------------
+# --- Local Settings & Secrets ---
+# ----------------------------------------------------------------------
+# Environment variables - NEVER commit API keys
+.env
+.env.local
+
+# IDE and OS temporary files
+.vs/
+.local/
+.DS_Store
+Thumbs.db
+bin/
+obj/
+
+# Jupyter checkpoints
+.ipynb_checkpoints/
+
+# ----------------------------------------------------------------------
+# --- Python Source Code (Proprietary / Hidden from Public) ---
+# ----------------------------------------------------------------------
+# Ignore all Python source files to keep the core logic private
+*.py
+__pycache__/
+*.py[cod]
+*$py.class
