@@ -1,4 +1,0 @@
-crewai==0.35.9
-litellm==1.40.0
-pandas==2.2.2
-python-dotenv==1.0.1
