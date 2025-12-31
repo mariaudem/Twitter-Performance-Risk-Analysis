@@ -10,7 +10,7 @@ How can autonomous agents reduce manual overhead in social media monitoring whil
 - Critic: Precision audit with severity scoring (1-10)
 - Sorter: Dynamic prioritization across the full report
 
-The core Python logic is currently kept private. If you'd like to dive deeper into the code and see how the Agent Trio is orchestrated, comment AGENT on my LinkedIn post or send me a DM!
+The core logic is kept in a private repository. For inquiries regarding code access, architectural walkthroughs, or collaboration, please reach out via LinkedIn: https://www.linkedin.com/in/mariaudem/.
 
 ## Tech Stack
 - CrewAI multi-agent orchestration
