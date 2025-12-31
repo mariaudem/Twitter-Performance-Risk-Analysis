@@ -4,7 +4,7 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
-# LLM (low temperature for consistent formatting)
+# LLM - zero temperature for strict formatting
 sorter_llm = LLM(model="groq/llama-3.3-70b-versatile", temperature=0.0)
 
 # Risk Sorter Agent
@@ -17,34 +17,34 @@ sorter = Agent(
     llm=sorter_llm
 )
 
-# Single task – top risks only
+# Task - clean list with short intro and closing
 task_sort = Task(
     description="""
-    Read the full batch-level risk report below.
+    You are an executive risk summarizer. Extract and rank the 10 most severe technical risks from the full report below.
 
     Input data (CSV content):
     {report_content}
 
-    Output exactly this format:
+    Output exactly this format and nothing else:
 
-    ### Top Technical Risks (prioritized by severity)
+    The top 10 technical risks associated with ChatGPT are:
 
-    1. [Clear risk description] – Severity: [X]/10
-    2. [Clear risk description] – Severity: [X]/10
-    3. [Clear risk description] – Severity: [X]/10
-    4. [Clear risk description] – Severity: [X]/10
-    5. [Clear risk description] – Severity: [X]/10
-    6. [Clear risk description] – Severity: [X]/10
-    7. [Clear risk description] – Severity: [X]/10
-    8. [Clear risk description] – Severity: [X]/10
-    9. [Clear risk description] – Severity: [X]/10
-    10. [Clear risk description] – Severity: [X]/10
+    1. [Concise risk description] – Severity: X/10
+    2. [Concise risk description] – Severity: X/10
+    3. [Concise risk description] – Severity: X/10
+    4. [Concise risk description] – Severity: X/10
+    5. [Concise risk description] – Severity: X/10
+    6. [Concise risk description] – Severity: X/10
+    7. [Concise risk description] – Severity: X/10
+    8. [Concise risk description] – Severity: X/10
+    9. [Concise risk description] – Severity: X/10
+    10. [Concise risk description] – Severity: X/10
 
-    List the 10 highest-severity risks derived from the data.
-    Keep descriptions concise and professional.
-    No tables, no batch counts, no additional sections.
+    These risks have significant strategic implications for individuals, organizations, and society as a whole, and it is essential to develop strategies to mitigate them and ensure the safe and responsible use of ChatGPT.
+
+    No extra text, thoughts, headings, or repetition.
     """,
-    expected_output="Clean numbered list of top 10 risks by severity",
+    expected_output="Intro sentence + single numbered list + closing sentence",
     agent=sorter
 )
 
@@ -55,11 +55,11 @@ df = pd.read_csv("outputs/risk_report_5000sample_final.csv")
 report_text = df.to_csv(index=False)
 
 # Run sorter
-print("\n=== Generating Top 10 Risks Summary ===")
+print("\n=== Generating Executive Summary ===")
 result = crew.kickoff(inputs={"report_content": report_text})
 
-# Save clean result
-with open("outputs/executive_risk_summary.md", "w", encoding="utf-8") as f:
+# Save to EXECUTIVE_SUMMARY.md (overwrite old one)
+with open("EXECUTIVE_SUMMARY.md", "w", encoding="utf-8") as f:
     f.write(str(result))
 
-print("\nTop risks summary saved to outputs/executive_risk_summary.md")
+print("\nExecutive summary saved to EXECUTIVE_SUMMARY.md")

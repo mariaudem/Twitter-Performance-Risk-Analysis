@@ -49,6 +49,3 @@ flowchart TD
 | **AI Governance** | Implementing self-correction loops to ensure data integrity. |
 | **Cognitive Data Processing** | Transforming unstructured noise into structured, prioritized metrics. |
 | **Scalable Risk Modeling** | Developing AI-driven frameworks for business-critical oversight. |
-
-
-
