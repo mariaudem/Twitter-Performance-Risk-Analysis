@@ -26,19 +26,15 @@ How can autonomous agents reduce manual overhead in social media monitoring whil
 
 ```mermaid
 flowchart TD
-    A["Raw CSV data\ndata/raw/chatgpt_daily_tweets.csv"] --> B["Load with Pandas"]
-    B --> C["Batching Loop\n50 tweets per batch"]
-    C --> D["CrewAI Sequential Crew"]
-    D --> E["Agent 1: Risk Intelligence\n(Hunter - Recall focus)"]
-    E --> F["Agent 2: QA & Reflection\n(Critic - Precision focus)"]
-    F --> G["Audited Result per Batch"]
-    G --> H{"Checkpoint Saved?\nRate limit handling"}
-    H -->|Yes| I["Append to results"]
-    H -->|Rate limit| J["Automatic pause/resume"]
-    J --> C
-    I --> K{"All batches complete?"}
-    K -->|No| C
-    K -->|Yes| L["Save final CSV\noutputs/risk_report_5000sample_final.csv"]
+    A[Raw CSV] --> B[Load & Batch 20 tweets]
+    B --> C[Hunter → Critic]
+    C --> D[Audited Batch Report]
+    D --> E[Checkpoint & Resume]
+    E --> F{All batches complete?}
+    F -->|No| B
+    F -->|Yes| G[Save Final Report]
+    G --> H[Risk Sorter Agent]
+    H --> I[Executive Top-10 Summary]
 ```
 
 ---
