@@ -41,3 +41,9 @@ obj/
 
 # Jupyter checkpoints
 .ipynb_checkpoints/
+
+# ----------------------------------------------------------------------
+# --- Python Source Code (Proprietary / Hidden from Public) ---
+# ----------------------------------------------------------------------
+# Ignore all Python source files to keep the core logic private
+*.py
