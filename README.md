@@ -16,7 +16,7 @@ python -m venv venv
 venv\Scripts\activate          # Windows
 # source venv/bin/activate     # macOS/Linux
 pip install crewai crewai[tools] pandas python-dotenv litellm
-cp .env.example .env           # Add your Groq API key (free tier sufficient)
+cp .env.example .env           # Add your Groq API key 
 python minimal_crew.py
 python risk_sorter.py
 ```
