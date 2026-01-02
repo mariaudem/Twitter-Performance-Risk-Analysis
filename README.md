@@ -10,13 +10,22 @@ How can autonomous agents reduce manual overhead in social media monitoring whil
 - Critic: Precision audit with severity scoring (1-10)
 - Sorter: Dynamic prioritization across the full report
 
-The core logic is kept in a private repository. For inquiries regarding code access, architectural walkthroughs, or collaboration, please reach out via LinkedIn: https://www.linkedin.com/in/mariaudem/.
+## Quick Start (Free & Local)
+```bash
+python -m venv venv
+venv\Scripts\activate          # Windows
+# source venv/bin/activate     # macOS/Linux
+pip install crewai crewai[tools] pandas python-dotenv litellm
+cp .env.example .env           # Add your Groq API key (free tier sufficient)
+python minimal_crew.py
+python risk_sorter.py
+```
 
 ## Tech Stack
 - CrewAI multi-agent orchestration
 - Groq Llama-3.3-70B (free tier + <€2 paid for rate limits)
 - Python 3.12 + Pandas
-- 5,000-tweet Kaggle sample processed in 250 batches of 20
+- Processed 5,000-tweet Kaggle sample in ~20 minutes (~90% reduction vs. manual deep analysis)
 
 ## Key Outcomes
 - Full audited report: outputs/risk_report_5000sample_final.csv
@@ -47,3 +56,5 @@ flowchart TD
 | **AI Governance** | Implementing self-correction loops to ensure data integrity. |
 | **Cognitive Data Processing** | Transforming unstructured noise into structured, prioritized metrics. |
 | **Scalable Risk Modeling** | Developing AI-driven frameworks for business-critical oversight. |
+
+Star/fork if you're building agentic systems. Issues & PRs welcome!
